@@ -1,0 +1,116 @@
+.navbar{
+    background-color: rgb(76, 96, 132);
+}
+.nav-item{
+    font-family: 'Cinzel', serif;
+  }
+.login-body{
+    
+    background-color: #fff;
+    align-items: center;
+}
+
+#login{
+    padding-top:3%;
+    padding-left:3%;
+    
+}
+
+.lll{
+    align-items: center;
+    text-align: center;
+}
+.login_card{
+    width:70%;
+    background-color: #fff;
+    padding:5%;
+    top:10%;
+    left:10%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.label{
+    width:80%;
+}
+
+.label input{
+    width:100%;
+    font-size:20px;
+    border-radius: 0px;
+}
+
+.label select{
+    width:100%;
+    font-size:20px;
+    border-radius: 0px;
+}
+
+
+.ll{
+    text-align: center;
+    align-items: center;
+    justify-items: center;
+}
+.submit{
+    
+    width:40%;
+    border:1.8px solid #000;
+    color:#000;
+    
+    padding: 2% 2%;
+}
+
+
+.submit:hover{
+    transition: 300ms;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none !important;
+}
+
+.submit1{
+    
+    width:10%;
+    border:1.8px solid #000;
+    color:#000;
+    
+    padding: 0.5% 0%;
+}
+.submit2{
+    
+    width:30%;
+    border:1.8px solid #000;
+    color:rgb(255, 255, 255);
+    background-color: #000;
+    
+    padding: 0.5% 0%;
+}
+
+
+.submit2:hover{
+    transition: 450ms;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+.submit1:hover{
+    transition: 450ms;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+#accept{
+    align-items: center;
+    text-align: center;
+}
+
+.aa{
+    align-items: center;
+    text-align: center;
+}

@@ -1,0 +1,55 @@
+.login-body{
+    
+    background-color: rgb(223, 230, 237);
+}
+
+#login{
+    padding:10%;
+}
+
+
+.label{
+    width:80%;
+}
+
+.label input{
+    width:50%;
+    font-size:20px;
+    border-radius: 0px;
+}
+
+.label select{
+    width:50%;
+    font-size:20px;
+    border-radius: 0px;
+}
+
+
+.ll{
+    text-align: center;
+    align-items: center;
+    justify-items: center;
+}
+.submit{
+    
+    border:1.8px solid #000;
+    color:#000;
+    
+    padding: 2% 2%;
+}
+
+
+.submit:hover{
+    transition: 300ms;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+}
+input{
+    text-decoration: none !important;
+}
+
+.login_card{
+    padding: 5% !important;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}

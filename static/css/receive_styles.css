@@ -1,0 +1,60 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap');
+
+.navbar{
+    background-color: rgb(76, 96, 132);
+}
+
+
+.nav-item{
+    font-family: 'Cinzel', serif;
+  }
+
+.ll{
+    text-align: center;
+    align-items: center;
+    justify-items: center;
+}
+
+
+a{
+    text-decoration: none !important;
+}
+
+.submit1{
+    margin:0 auto;
+    width:10%;
+    border:1.8px solid #000;
+    color:#000;
+    
+    padding: 0.5% 0%;
+}
+
+.submit1:hover{
+    transition: 450ms;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+#accept{
+    align-items: center;
+    text-align: center;
+}
+
+.aa{
+    align-items: center;
+    text-align: center;
+}
+
+#contact a,span,p{
+    font-family: 'Open Sans', sans-serif !important;
+     font-size:20px !important;
+     font-weight:550 !important;
+}
+
+#contact h4{
+    font-family: 'Cinzel', serif !important; 
+}

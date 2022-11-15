@@ -1,0 +1,278 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!-- styles -->
+    <link rel="stylesheet" href="{% static 'css/history_styles.css' %}">
+
+  <!-- bootstrap links -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+<!-- font awesome icons -->
+<script src="https://kit.fontawesome.com/802de0dec6.js" crossorigin="anonymous"></script>
+<!-- google fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@1,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+<style>
+  #contact a,span,p{
+    font-family: 'Open Sans', sans-serif !important;
+     font-size:20px !important;
+     font-weight:550 !important;
+}
+
+#contact h4{
+    font-family: 'Cinzel', serif !important; 
+}
+.nav-item, .navbar-brand{
+  font-family: 'Montserrat', sans-serif;
+  }
+</style>
+</head>
+
+<body class="login-body">
+  <section id="header">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">4 The People</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav navbar-center">
+                <li class="nav-item">
+                  <a class="nav-link nav-link-ltr" aria-current="page" href="volunteer_main">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link nav-link-ltr" href="receive">Accept</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link nav-link-ltr" href="history">Our History</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link nav-link-ltr" href="#">My Profile</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link nav-link-ltr" href="#contact">Contact Us</a>
+                </li>
+              </ul>
+              <ul class="navbar-nav navbar-right">
+                <li class="nav-item" >
+                  <a class="nav-link" href="logout"><i class="fa-solid fa-right-from-bracket fa-lg" style="color:rgb(40, 40, 55);"></i></a>
+                </li>
+              </ul>
+        </div>
+      </div>
+    </nav>
+  </section>
+<section id="history">
+    <div class="hh" >
+      <div class="profile" style="padding: 5% 15%; box-shadow: rgba(57, 42, 143, 0.12) 0px 1px 3px, rgba(30, 61, 120, 0.24) 0px 1px 2px; font-family: 'Open Sans', sans-serif;">
+        <div style="text-align:center; align-items:center; justify-content: center;
+        justify-items: center;">
+            <h3 style="text-decoration:underline; font-family: 'Cinzel', serif;">Profile</h3>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-12 h">
+                <div>
+                    <h5>Username</h5>
+                    <p>{{user_obj.username}}</p>
+                    <h5>First name</h5>
+                    <p>{{user_obj.first_name}}</p>
+                    <h5>Last name</h5>
+                    <p>{{user_obj.last_name}}</p>
+                    <h5>Email</h5>
+                    <p>{{user_obj.email}}</p>
+                    <h5>Mobile no.</h5>
+                    <p>{{volunteer_obj.mobile_no}}</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-12 h">
+                <div>
+                    <h5>ID Image</h5>
+                    <img style="object-fit: fill;" src="{{volunteer_obj.idpic.url}}" width="300px" height="150px"/>
+                    <br>
+                    <br>
+                    <h5>Address</h5>
+                    <p>{{volunteer_obj.address}}</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 h" style="text-align: center;">
+              <div>
+                <br>
+                <br>
+                <button type="button" class="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  Update Profile
+                </button>
+
+                <br>
+                <br>
+                
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Profile Updation</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <form action="update_volunteer" method="post">
+                          {% csrf_token %}
+                          <br>
+                          <div class="label">
+                            <label>First Name</label><br>
+                            <input name="first_name" value="{{user_obj.first_name}}" class=""/>
+                          </div>
+                            <br>
+                            <div class="label">
+                              <label>Last Name</label><br>
+                              <input name="last_name" value="{{user_obj.last_name}}" class=""/>
+                            </div>
+                              <br>
+                        <br>
+                            <br>
+                        <div class="label">
+                          <label>Mobile no.</label><br>
+                          <input name="mobile_no" value="{{volunteer_obj.mobile_no}}" class=""/>
+                          </div>
+                        <br>
+                        <div class="label">
+                          <label>Address</label><br>
+                          <input name="address" value="{{volunteer_obj.address}}" class=""/>
+                        </div>
+                          <br>
+                        <br>
+                        <input class="submit ll" type="submit"/>
+                          </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <button type="button" class="button" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+                Change Password
+              </button>
+              <br><br>
+              <!-- Modal -->
+              <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Change Password</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <form action="change_volunteer_password" method="post">
+                        {% csrf_token %}
+                        <br>
+                        
+                        <div class="label">
+                        <label>Enter new Password</label><br>
+                        <input type="password" name="password1"class=""/>
+                        <p>*Password must have one uppercase, one lowercase alphabets, a digit and a special symbol including $#@ </p>
+                        </div>
+                      <br>
+                      <input class="submit ll" type="submit"/>
+                        </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <button type="button" class="button" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                Change ID Image
+              </button>
+              <br><br>
+              <!-- Modal -->
+              <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Change ID image</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <form action="change_volunteer_id" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <br>
+                        
+                        <div class="label">
+                            <label>Id image</label><br>
+                            <input type="file" name="id_pic" class="form-control" required>
+                            </div>
+
+
+                      <br>
+                      <input class="submit ll" type="submit"/>
+                    <br>
+                      <p>After changing your ID, you must wait until your ID is accepted and can then login again</p>
+                        </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <a href="all_receptions" target="blank"><button type="button" class="button">
+                View all your receptions
+              </button></a>
+
+              <br><br>
+
+              <a href="all_posts" target="blank"><button type="button" class="button">
+                View all your posts
+              </button></a>
+            </div>
+
+
+          </div>
+          </div>
+        </div>
+        
+    </div>
+</section>
+
+<section id="contact">
+    <div class="container-fluid">
+      <div class="row contact-us" style="color:#000;">
+        <div class="col-lg-4 col-md-6 col-sm-12 quick" >
+          <h4 style="text-decoration: underline; color:#000;">Quick Access</h4>
+          <a href="volunteer_main">Home</a><br>
+          <a href="receive">Accept</a><br>
+          <a href="history">Our History</a><br>
+          <a href="#">My Profile</a>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <h4 style="text-decoration: underline; color:#000;">Contact Us</h4>
+          <p style="font-size: 18px; color:#000;">
+          <span>GVP College,</span><br>
+          <span>Madhurwada,</span><br>
+          <span>Visakhapatnam.</span><br>
+          <span>Pin: 530009</span>
+        </p>
+          
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <h4 style="text-decoration: underline; color:#000;">More</h4>
+          <p style="font-size: 18px; color:#000;">Our goal is to support the communities and build a Sustainable World.</p>
+          <span style="color:#000;"><span style="font-size: 20px; font-weight: 600;">Call : </span>-</span><br>
+          <span><span style="font-size: 20px; font-weight: 600;">Email : </span>-</span><br><br>
+          <a href="#"><i class="fa-brands fa-instagram fa-2xl icon"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram fa-2xl icon"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram fa-2xl icon"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+</html>
